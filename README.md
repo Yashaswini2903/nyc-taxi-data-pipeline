@@ -1,29 +1,47 @@
-# NYC Taxi Data Batch Processing Pipeline
+#  NYC Taxi Data Batch Processing Pipeline
 
-🚀 Scalable Batch Data Pipeline using PySpark | Docker | Airflow
+A scalable batch-processing data pipeline built using **PySpark, Docker, and Apache Airflow** to analyze NYC Yellow Taxi trip data.
 
-## Overview
-This project implements a batch-processing data pipeline using PySpark to analyze NYC Yellow Taxi data.
+---
 
-## Technologies Used
-- PySpark
-- Docker
-- Apache Airflow
-- Parquet Storage
+##  Overview
+This project demonstrates a data engineering pipeline designed to process large-scale, time-series data efficiently. It follows a **microservices-based architecture** and supports batch processing for analytics use cases.
 
-## Architecture
-Data Source → Ingestion → PySpark Processing → Parquet Storage → Visualization
+---
 
-## How to Run
-1. Start Docker:
-   docker-compose up
-2. Run ingestion script:
-   python ingestion/ingest_data.py
-3. Run PySpark job:
-   python processing/pyspark_job.py
+##  Architecture
+![Architecture Diagram](architecture_diagram.png)
 
-## Output
-Processed data stored in Parquet format.
+**Flow:**
+Data Source → Ingestion → PySpark Processing → Parquet Storage → Airflow Scheduling
 
-## Author
-Yashaswini
+---
+
+##  Technologies Used
+- **PySpark** – Distributed data processing  
+- **Docker** – Containerization & microservices  
+- **Apache Airflow** – Workflow scheduling  
+- **Parquet** – Optimized storage format  
+
+---
+
+##  Microservices
+- **Ingestion Service**: Loads raw CSV data  
+- **Processing Service**: Cleans and aggregates data using PySpark  
+- **Storage Layer**: Stores processed data in Parquet format  
+- **Scheduler**: Automates batch jobs using Airflow  
+
+---
+
+##  Reliability & Scalability
+- Docker ensures service isolation and reproducibility  
+- PySpark enables distributed processing of large datasets  
+- Airflow provides reliable job scheduling  
+
+---
+
+##  How to Run
+```bash
+docker-compose up
+python ingestion/ingest_data.py
+python processing/pyspark_job.py
