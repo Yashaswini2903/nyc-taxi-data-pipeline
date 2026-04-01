@@ -35,7 +35,7 @@ Data Source → Ingestion → PySpark Processing → Parquet Storage → Airflow
 
 ##  Reliability & Scalability
 - Docker ensures service isolation and reproducibility  
-- PySpark enables distributed processing of large datasets  
+- PySpark enables the distributed processing of large datasets  
 - Airflow provides reliable job scheduling  
 
 ---
@@ -45,3 +45,5 @@ Data Source → Ingestion → PySpark Processing → Parquet Storage → Airflow
 docker-compose up
 python ingestion/ingest_data.py
 python processing/pyspark_job.py
+
+This project follows a batch-processing architecture where data is processed periodically using scheduled workflows.
